@@ -44,7 +44,7 @@ pipeline {
       }
     }
 
-    // 🔥 NEW STAGE
+    //   NEW STAGE
     stage("Push to Docker Hub") {
       steps {
         withCredentials([usernamePassword(
