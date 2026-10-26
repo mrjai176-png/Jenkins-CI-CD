@@ -6,7 +6,7 @@ pipeline {
     IMAGE_NAME = "venkatesan004/project-4-multibranch-pipeline"
     IMAGE_TAG = "${BUILD_NUMBER}"
     CONTAINER_NAME = "project-4-multibranch-pipeline"
-    EMAIL_TO = "venkatesangunaraj@gmail.com"
+    EMAIL_TO = "mrjai176@gmail.com"
     DOCKER_CREDENTIALS = "dockerhub-credentials"
   }
 
@@ -33,7 +33,7 @@ pipeline {
       }
     }
 
-    // 🔹 Only for master
+    //  Only for master
     stage("Docker Build") {
       when {
         branch 'master'
@@ -48,7 +48,7 @@ pipeline {
       }
     }
 
-    // 🔥 PUSH STAGE (ONLY MASTER)
+    //  PUSH STAGE (ONLY MASTER)
     stage("Push to Docker Hub") {
       when {
         branch 'master'
@@ -69,7 +69,7 @@ pipeline {
       }
     }
 
-    // 🔹 Deploy only on master
+    //  Deploy only on master
     stage("Docker Deploy (Production)") {
       when {
         branch 'master'
